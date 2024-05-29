@@ -41,16 +41,16 @@ def createCar():
 @app.route('/cars', methods=['GET'])
 def getCars():
     cars = []
-    for doc in db.find():
+    for car in db.find():
         cars.append({
-            '_id': str(ObjectId(doc['_id'])),
-            'matricula': doc['matricula'],
-            'dataMat': doc['data_mat'],
-            'marca': doc['marca'],
-            'modelo': doc['modelo'],
-            'categ': doc['categ'],
-            'dataRev': doc['data_rev'],
-            'email': doc['email']
+            '_id': str(ObjectId(car['_id'])),
+            'matricula': car['matricula'],
+            'dataMat': car['data_mat'],
+            'marca': car['marca'],
+            'modelo': car['modelo'],
+            'categ': car['categ'],
+            'dataRev': car['data_rev'],
+            'email': car['email']
         })
     return jsonify(cars)
 
@@ -68,12 +68,12 @@ def getCar(id):
         'email': car['email']
     })
 
-@app.route('/car/<id>', methods=['DELETE'])
+@app.route('/cars/<id>', methods=['DELETE'])
 def deleteCar(id):
     db.delete_one({'_id': ObjectId(id)})
     return jsonify({'msg': 'Viatura removida'})
 
-@app.route('/car/<id>', methods=['PUT'])
+@app.route('/cars/<id>', methods=['PUT'])
 def updateCar(id):
     db.update_one({'_id': ObjectId(id)}, {'$set': {
         'matricula': request.json['matricula'],

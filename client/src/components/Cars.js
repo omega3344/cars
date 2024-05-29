@@ -79,18 +79,18 @@ export default function Cars() {
 
   const editCar = async (id) => {
     const res = await fetch(`${API}/cars/${id}`);
-    await res.json();
+    const data = await res.json();
 
     setEditing(true);
     setId(id);
 
-    setMatricula('');
-    setDataMat('');
-    setMarca('');
-    setModelo('');
-    setCateg('');
-    setDataRev('');
-    setEmail('');
+    setMatricula(data.matricula);
+    setDataMat(data.dataMat);
+    setMarca(data.marca);
+    setModelo(data.modelo);
+    setCateg(data.categ);
+    setDataRev(data.dataRev);
+    setEmail(data.email);
     matInput.current.focus();
   };
 
