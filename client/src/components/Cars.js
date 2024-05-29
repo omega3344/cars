@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './Cars.css';
 
 const API = process.env.REACT_APP_API;
 
@@ -112,80 +113,9 @@ export default function Cars() {
 
   return (
     <div className="row">
-      <div className="col-md-4">
-        <form onSubmit={handleSubmit} className="card card-body">
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setMatricula(e.target.value)}
-              value={matricula}
-              className="form-control"
-              placeholder="Matricula"
-              ref={matInput}
-              autoFocus
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setDataMat(e.target.value)}
-              value={dataMat}
-              className="form-control"
-              placeholder="Data de matrícula"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setMarca(e.target.value)}
-              value={marca}
-              className="form-control"
-              placeholder="Marca"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setModelo(e.target.value)}
-              value={modelo}
-              className="form-control"
-              placeholder="Modelo"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setCateg(e.target.value)}
-              value={categ}
-              className="form-control"
-              placeholder="Categoria"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setDataRev(e.target.value)}
-              value={dataRev}
-              className="form-control"
-              placeholder="Data Revisão"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              className="form-control"
-              placeholder="Email Notificação"
-            />
-          </div>
-          <button className="btn btn-primary btn-block">
-            {editing ? 'Atualizar' : 'Criar'}
-          </button>
-        </form>
-      </div>
-      <div className="col-md-6">
-        <table className="table table-striped">
+      <div className="col"></div>
+      <div>
+        <table className="table-content">
           <thead>
             <tr>
               <th>Matrícula</th>
@@ -224,6 +154,78 @@ export default function Cars() {
                 </td>
               </tr>
             ))}
+            <tr>
+              <div onSubmit={handleSubmit} className="input-group">
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setMatricula(e.target.value)}
+                    value={matricula}
+                    className="form-control"
+                    placeholder="Matricula"
+                    ref={matInput}
+                    autoFocus
+                  />
+                </td>
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setDataMat(e.target.value)}
+                    value={dataMat}
+                    className="form-control"
+                    placeholder="Data de matrícula"
+                  />
+                </td>
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setMarca(e.target.value)}
+                    value={marca}
+                    className="form-control"
+                    placeholder="Marca"
+                  />
+                </td>
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setModelo(e.target.value)}
+                    value={modelo}
+                    className="form-control"
+                    placeholder="Modelo"
+                  />
+                </td>
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setCateg(e.target.value)}
+                    value={categ}
+                    className="form-control"
+                    placeholder="Categoria"
+                  />
+                </td>
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setDataRev(e.target.value)}
+                    value={dataRev}
+                    className="form-control"
+                    placeholder="Data Revisão"
+                  />
+                </td>
+                <td className="form-group">
+                  <input
+                    type="text"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    className="form-control"
+                    placeholder="Email Notificação"
+                  />
+                </td>
+                <button className="btn btn-primary btn-block">
+                  {editing ? 'Atualizar' : 'Criar'}
+                </button>
+              </div>
+            </tr>
           </tbody>
         </table>
       </div>
