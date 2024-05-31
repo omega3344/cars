@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Cars.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons';
 
 const API = process.env.REACT_APP_API;
 
@@ -113,122 +115,122 @@ export default function Cars() {
 
   return (
     <div className="row">
-      <div className="col"></div>
-      <div>
-        <table className="table-content">
-          <thead>
-            <tr>
-              <th>Matrícula</th>
-              <th>Data Matrícula</th>
-              <th>Marca</th>
-              <th>Modelo</th>
-              <th>Categoria</th>
-              <th>Data Revisão</th>
-              <th>Email Notificação</th>
-              <th>Operações</th>
+      <table className="table-content">
+        <thead>
+          <tr>
+            <th>Matrícula</th>
+            <th>Data Matrícula</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Categoria</th>
+            <th>Data Revisão</th>
+            <th>Email Notificação</th>
+            <th>Operações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cars.map((car) => (
+            <tr key={car._id}>
+              <td>{car.matricula}</td>
+              <td>{car.dataMat}</td>
+              <td>{car.marca}</td>
+              <td>{car.modelo}</td>
+              <td>{car.categ}</td>
+              <td>{car.dataRev}</td>
+              <td>{car.email}</td>
+              <td>
+                <button className="btn-edit" onClick={() => editCar(car._id)}>
+                  <i className="fa fa-pensil"></i>
+                </button>
+                <button
+                  className="btn-delete"
+                  onClick={() => deleteCar(car._id)}
+                >
+                  <i className="fa fa-trash"></i>
+                </button>
+              </td>
             </tr>
-          </thead>
+          ))}
+        </tbody>
+      </table>
+      <form className="input-group" onSubmit={handleSubmit}>
+        <table className="table-input">
           <tbody>
-            {cars.map((car) => (
-              <tr key={car._id}>
-                <td>{car.matricula}</td>
-                <td>{car.dataMat}</td>
-                <td>{car.marca}</td>
-                <td>{car.modelo}</td>
-                <td>{car.categ}</td>
-                <td>{car.dataRev}</td>
-                <td>{car.email}</td>
-                <td>
-                  <button
-                    className="btn btn-secondary btn-sm btn-block"
-                    onClick={() => editCar(car._id)}
-                  >
-                    Editar
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm btn-block"
-                    onClick={() => deleteCar(car._id)}
-                  >
-                    Remover
-                  </button>
-                </td>
-              </tr>
-            ))}
             <tr>
-              <div onSubmit={handleSubmit} className="input-group">
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setMatricula(e.target.value)}
-                    value={matricula}
-                    className="form-control"
-                    placeholder="Matricula"
-                    ref={matInput}
-                    autoFocus
-                  />
-                </td>
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setDataMat(e.target.value)}
-                    value={dataMat}
-                    className="form-control"
-                    placeholder="Data de matrícula"
-                  />
-                </td>
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setMarca(e.target.value)}
-                    value={marca}
-                    className="form-control"
-                    placeholder="Marca"
-                  />
-                </td>
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setModelo(e.target.value)}
-                    value={modelo}
-                    className="form-control"
-                    placeholder="Modelo"
-                  />
-                </td>
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setCateg(e.target.value)}
-                    value={categ}
-                    className="form-control"
-                    placeholder="Categoria"
-                  />
-                </td>
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setDataRev(e.target.value)}
-                    value={dataRev}
-                    className="form-control"
-                    placeholder="Data Revisão"
-                  />
-                </td>
-                <td className="form-group">
-                  <input
-                    type="text"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    className="form-control"
-                    placeholder="Email Notificação"
-                  />
-                </td>
-                <button className="btn btn-primary btn-block">
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setMatricula(e.target.value)}
+                  value={matricula}
+                  className="form-control"
+                  placeholder="Matrícula"
+                  ref={matInput}
+                  autoFocus
+                />
+              </td>
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setDataMat(e.target.value)}
+                  value={dataMat}
+                  className="form-control"
+                  placeholder="Data da matrícula"
+                />
+              </td>
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setMarca(e.target.value)}
+                  value={marca}
+                  className="form-control"
+                  placeholder="Marca"
+                />
+              </td>
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setModelo(e.target.value)}
+                  value={modelo}
+                  className="form-control"
+                  placeholder="Modelo"
+                />
+              </td>
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setCateg(e.target.value)}
+                  value={categ}
+                  className="form-control"
+                  placeholder="Categoria"
+                />
+              </td>
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setDataRev(e.target.value)}
+                  value={dataRev}
+                  className="form-control"
+                  placeholder="Data da última revisão"
+                />
+              </td>
+              <td className="form-group">
+                <input
+                  type="text"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  className="form-control"
+                  placeholder="Email de notificação"
+                />
+              </td>
+              <td className="form-group">
+                <button className="btn-primary">
                   {editing ? 'Atualizar' : 'Criar'}
                 </button>
-              </div>
+              </td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </form>
     </div>
   );
 }
