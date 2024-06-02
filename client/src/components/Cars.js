@@ -169,7 +169,7 @@ export default function Cars() {
               </td>
               <td className="form-group">
                 <input
-                  type="text"
+                  type="date"
                   onChange={(e) => setDataMat(e.target.value)}
                   value={dataMat}
                   className="form-control"
@@ -196,16 +196,20 @@ export default function Cars() {
               </td>
               <td className="form-group">
                 <input
-                  type="text"
+                  list="categlist"
                   onChange={(e) => setCateg(e.target.value)}
                   value={categ}
                   className="form-control"
                   placeholder="Categoria"
                 />
+                <datalist id="categlist">
+                  <option value="Passageiros"/>
+                  <option value="Mercadorias"/>
+                </datalist>
               </td>
               <td className="form-group">
                 <input
-                  type="text"
+                  type="date"
                   onChange={(e) => setDataRev(e.target.value)}
                   value={dataRev}
                   className="form-control"
@@ -214,7 +218,7 @@ export default function Cars() {
               </td>
               <td className="form-group">
                 <input
-                  type="text"
+                  type="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   className="form-control"
