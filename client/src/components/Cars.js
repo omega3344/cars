@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Cars.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons';
+import {faPencil, faTrash} from '@fortawesome/free-solid-svg-icons'
 
 const API = process.env.REACT_APP_API;
 
@@ -139,14 +139,13 @@ export default function Cars() {
               <td>{car.dataRev}</td>
               <td>{car.email}</td>
               <td>
-                <button className="btn-edit" onClick={() => editCar(car._id)}>
-                  <i className="fa fa-pensil"></i>
+                <button className="btn-edit" 
+                  onClick={() => editCar(car._id)}>
+                  <FontAwesomeIcon icon={faPencil} />
                 </button>
-                <button
-                  className="btn-delete"
-                  onClick={() => deleteCar(car._id)}
-                >
-                  <i className="fa fa-trash"></i>
+                <button className="btn-delete"
+                  onClick={() => deleteCar(car._id)}>
+                  <FontAwesomeIcon icon={faTrash} />
                 </button>
               </td>
             </tr>
