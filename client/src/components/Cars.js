@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Cars.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPencil, faTrash} from '@fortawesome/free-solid-svg-icons'
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const API = process.env.REACT_APP_API;
 
@@ -139,12 +139,13 @@ export default function Cars() {
               <td>{car.dataRev}</td>
               <td>{car.email}</td>
               <td>
-                <button className="btn-edit" 
-                  onClick={() => editCar(car._id)}>
+                <button className="btn-edit" onClick={() => editCar(car._id)}>
                   <FontAwesomeIcon icon={faPencil} />
                 </button>
-                <button className="btn-delete"
-                  onClick={() => deleteCar(car._id)}>
+                <button
+                  className="btn-delete"
+                  onClick={() => deleteCar(car._id)}
+                >
                   <FontAwesomeIcon icon={faTrash} />
                 </button>
               </td>
@@ -159,7 +160,7 @@ export default function Cars() {
               <td className="form-group">
                 <input
                   type="text"
-                  onChange={(e) => setMatricula(e.target.value)}
+                  onChange={(e) => setMatricula(e.target.value.toUpperCase())}
                   value={matricula}
                   className="form-control"
                   placeholder="Matrícula"
@@ -179,7 +180,7 @@ export default function Cars() {
               <td className="form-group">
                 <input
                   type="text"
-                  onChange={(e) => setMarca(e.target.value)}
+                  onChange={(e) => setMarca(e.target.value.toUpperCase())}
                   value={marca}
                   className="form-control"
                   placeholder="Marca"
@@ -188,7 +189,7 @@ export default function Cars() {
               <td className="form-group">
                 <input
                   type="text"
-                  onChange={(e) => setModelo(e.target.value)}
+                  onChange={(e) => setModelo(e.target.value.toUpperCase())}
                   value={modelo}
                   className="form-control"
                   placeholder="Modelo"
@@ -203,8 +204,8 @@ export default function Cars() {
                   placeholder="Categoria"
                 />
                 <datalist id="categlist">
-                  <option value="Passageiros"/>
-                  <option value="Mercadorias"/>
+                  <option value="Passageiros" />
+                  <option value="Mercadorias" />
                 </datalist>
               </td>
               <td className="form-group">
@@ -219,7 +220,7 @@ export default function Cars() {
               <td className="form-group">
                 <input
                   type="email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value.toLowerCase())}
                   value={email}
                   className="form-control"
                   placeholder="Email de notificação"
