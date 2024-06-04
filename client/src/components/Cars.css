@@ -9,17 +9,24 @@
   padding: 25px;
 }
 
+caption {
+  color: hsl(170, 100%, 30%);
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 20px;
+}
+
 .table-content {
   border-collapse: collapse;
   border-radius: 5px 5px 0 0;
   width: 90%;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.25);
 }
 
 .table-content thead tr {
-  background-color: #009879;
-  color: #ffffff;
+  background-color: hsl(170, 100%, 30%);
+  color: hsl(0, 0%, 100%);
   text-align: center;
   font-weight: bold;
 }
@@ -30,25 +37,25 @@
 }
 
 .table-content tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
 }
 
 .table-content tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: hsl(0, 0%, 95%);
 }
 
 .table-content tbody tr:nth-last-of-type(1) {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid hsl(170, 100%, 30%);
 }
 
 .table-content tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: hsl(170, 100%, 30%);
 }
 
 .input-group {
   border-collapse: collapse;
-  background-color: #009879;
+  background-color: hsl(170, 100%, 30%);
   margin-top: 50px;
   border-radius: 5px;
   overflow: hidden;
@@ -66,41 +73,41 @@
 .btn-primary {
   height: 30px;
   width: 80px;
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-family: 'Poppins';
   font-weight: bold;
-  background-color: rgba(100, 230, 100, 0.45);
+  background-color: hsla(120, 70%, 65%, 0.45);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .btn-primary:hover {
-  background-color: rgba(100, 230, 100, 0.30);
+  background-color: hsla(120, 70%, 65%, 0.3);
 }
 
 .btn-edit {
-  background-color: rgba(240, 235, 40, 0.90);
+  background-color: hsla(60, 90%, 55%, 0.9);
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .btn-edit:hover {
-  background-color: rgba(240, 235, 40, 0.70);
+  background-color: hsla(60, 90%, 55%, 0.7);
 }
 
 .btn-delete {
-  background-color: rgb(250, 20, 20, 0.90);
+  background-color: hsla(0, 95%, 55%, 0.9);
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .btn-delete:hover {
-  background-color: rgba(250, 20, 20, 0.75);
+  background-color: hsla(0, 95%, 55%, 0.75);
 }

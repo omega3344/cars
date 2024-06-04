@@ -116,6 +116,7 @@ export default function Cars() {
   return (
     <div className="row">
       <table className="table-content">
+        <caption>VIATURAS DE SERVIÇO</caption>
         <thead>
           <tr>
             <th>Matrícula</th>
@@ -197,13 +198,13 @@ export default function Cars() {
               </td>
               <td className="form-group">
                 <input
-                  list="categlist"
+                  list="categList"
                   onChange={(e) => setCateg(e.target.value)}
                   value={categ}
                   className="form-control"
                   placeholder="Categoria"
                 />
-                <datalist id="categlist">
+                <datalist id="categList">
                   <option value="Passageiros" />
                   <option value="Mercadorias" />
                 </datalist>
