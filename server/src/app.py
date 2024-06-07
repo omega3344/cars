@@ -41,7 +41,8 @@ def createCar():
 @app.route('/cars', methods=['GET'])
 def getCars():
     cars = []
-    for car in db.find():
+    db_sorted = db.find().sort({'data_mat':1})
+    for car in db_sorted:
         cars.append({
             '_id': str(ObjectId(car['_id'])),
             'matricula': car['matricula'],
