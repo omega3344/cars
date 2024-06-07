@@ -115,8 +115,8 @@ export default function Cars() {
 
   return (
     <div className="row">
+      <h1>VIATURAS DE SERVIÇO</h1>
       <table className="table-content">
-        <caption>VIATURAS DE SERVIÇO</caption>
         <thead>
           <tr>
             <th>Matrícula</th>
@@ -171,11 +171,13 @@ export default function Cars() {
               </td>
               <td className="form-group">
                 <input
-                  type="date"
+                  type="text"
                   onChange={(e) => setDataMat(e.target.value)}
                   value={dataMat}
                   className="form-control"
                   placeholder="Data da matrícula"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
                 />
               </td>
               <td className="form-group">
