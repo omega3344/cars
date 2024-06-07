@@ -176,8 +176,8 @@ export default function Cars() {
                   value={dataMat}
                   className="form-control"
                   placeholder="Data da matrícula"
-                  onfocus="(this.type='date')"
-                  onblur="(this.type='text')"
+                  onFocus={(e) => (e.target.type = 'date')}
+                  onBlur={(e) => (e.target.type = 'text')}
                 />
               </td>
               <td className="form-group">
@@ -213,11 +213,13 @@ export default function Cars() {
               </td>
               <td className="form-group">
                 <input
-                  type="date"
+                  type="text"
                   onChange={(e) => setDataRev(e.target.value)}
                   value={dataRev}
                   className="form-control"
                   placeholder="Data da última revisão"
+                  onFocus={(e) => (e.target.type = 'date')}
+                  onBlur={(e) => (e.target.type = 'text')}
                 />
               </td>
               <td className="form-group">

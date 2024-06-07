@@ -9,15 +9,15 @@
   padding: 25px;
 }
 
-caption {
+h1 {
   color: hsl(170, 100%, 30%);
   font-size: 2.5em;
   font-weight: bold;
-  padding: 20px;
 }
 
 .table-content {
   border-collapse: collapse;
+  border-radius: 5px 5px 0 0;
   width: 90%;
   overflow: hidden;
   box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.25);
@@ -25,7 +25,6 @@ caption {
 
 .table-content thead tr {
   background-color: hsl(170, 100%, 30%);
-  border-radius: 5px 5px 0 0;
   color: hsl(0, 0%, 100%);
   text-align: center;
   font-weight: bold;
